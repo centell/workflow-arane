@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.centell.arane</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>D8212D75-BF0B-4BCD-AE42-3397172F9C6C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9CD319D8-30F6-4E8A-A606-345A679FF59E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Centell</string>
+	<key>description</key>
+	<string>Open Arane Services</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>ARANE</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>arane</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>#!/usr/bin/env python3
+import json
+import sys
+
+query = sys.argv[1].strip().lower() if len(sys.argv) &gt; 1 else ""
+
+# Alfred에 출력할 데이터
+items = [
+    {
+        "title": "Cafe",
+        "arg": "https://cafe.naver.com/nea?iframe_url=/ArticleList.nhn%3Fsearch.clubid=31247252%26search.boardtype=L",
+        "match": "arane cafe cf"
+    },
+    {
+        "title": "Chzzk",
+        "subtitle": "Open chzzk",
+        "arg": "https://chzzk.naver.com/82387dec17b628b28f2c2c1431a1c8ba",
+        "match": "arane chzzk cz"
+    },
+    {
+        "title": "Youtube",
+        "arg": "https://www.youtube.com/@araneum16",
+        "match": "arane youtube yt"
+    },
+    {
+        "title": "Songbook",
+        "arg": "https://araneum16.notion.site/02c3c9125dad418ca3c99c5dcd3eb54a",
+        "match": "arane songbook sb"
+    },
+    {
+        "title": "Twitter",
+        "arg": "https://x.com/Araneum16",
+        "match": "arane twitter x"
+    }
+]
+
+# 입력된 query와 match 값이 일치하는 항목 필터링
+filtered_items = [item for item in items if all(q in item["match"] for q in query.split())]
+
+# Alfred JSON 포맷으로 결과 반환
+print(json.dumps({"items": [
+    {
+        "title": item["title"],
+        "arg": item["arg"],
+        "autocomplete": item["title"],
+        "subtitle": "Open in Browser",
+    }
+    for item in filtered_items
+]}))</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Go to Arane</string>
+				<key>type</key>
+				<integer>9</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D8212D75-BF0B-4BCD-AE42-3397172F9C6C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+if [[ $1 == *"https://chzzk.naver.com/82387dec17b628b28f2c2c1431a1c8ba"* ]]; then
+    open -a "Google Chrome" "$1"
+else
+    open -a "Firefox Developer Edition" "$1"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9CD319D8-30F6-4E8A-A606-345A679FF59E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string># Open Arane Services
+
+Meet super kawai witch Arane</string>
+	<key>uidata</key>
+	<dict>
+		<key>9CD319D8-30F6-4E8A-A606-345A679FF59E</key>
+		<dict>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+		<key>D8212D75-BF0B-4BCD-AE42-3397172F9C6C</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>40</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.1</string>
+	<key>webaddress</key>
+	<string>https://github.com/centell/workflow-arane</string>
+</dict>
+</plist>
