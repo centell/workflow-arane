@@ -35,6 +35,35 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>#!/bin/bash
+
+if [[ $1 == *"https://chzzk.naver.com/82387dec17b628b28f2c2c1431a1c8ba"* ]]; then
+    open -a "Google Chrome" "$1"
+else
+    open "$1"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9CD319D8-30F6-4E8A-A606-345A679FF59E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -128,35 +157,6 @@ print(json.dumps({"items": [
 			<string>D8212D75-BF0B-4BCD-AE42-3397172F9C6C</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>#!/bin/bash
-
-if [[ $1 == *"https://chzzk.naver.com/82387dec17b628b28f2c2c1431a1c8ba"* ]]; then
-    open -a "Google Chrome" "$1"
-else
-    open -a "Firefox Developer Edition" "$1"
-fi</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9CD319D8-30F6-4E8A-A606-345A679FF59E</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
