@@ -114,6 +114,11 @@ items = [
         "match": "arane youtube yt"
     },
     {
+        "title": "Youtube Replay",
+        "arg": "https://www.youtube.com/@araneum16re",
+        "match": "arane youtubere ytr"
+    },
+    {
         "title": "Songbook",
         "arg": "https://araneum16.notion.site/02c3c9125dad418ca3c99c5dcd3eb54a",
         "match": "arane songbook sb"
@@ -182,10 +187,8 @@ Meet super kawai witch Arane</string>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/centell/workflow-arane</string>
 </dict>
